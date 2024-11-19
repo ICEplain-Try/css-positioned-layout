@@ -1,1 +1,96 @@
 /* Start coding here */
+
+body {
+    margin: 0;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #808080;
+    color: white;
+    padding: 15px 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Chat Container */
+.chat-container {
+    padding: 20px;
+    height: calc(100vh - 60px); /* ความสูงทั้งหมดลบด้วยความสูง header */
+}
+
+/* Message Styles */
+.message {
+    margin: 10px 0;
+    display: flex;
+}
+
+.message.right {
+    justify-content: flex-end;
+}
+
+.message-content {
+    position: relative; /* สำหรับการจัดตำแหน่ง close button */
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 60%;
+}
+
+/* ข้อความฝั่งซ้าย */
+.message.left .message-content {
+    background-color: #808080;
+    color: white;
+}
+
+/* ข้อความฝั่งขวา */
+.message.right .message-content {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ข้อความสีเทา */
+.message.right.gray .message-content {
+    background-color: #E0E0E0;
+    color: black;
+}
+
+/* ปุ่มปิด */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #808080;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* หางกล่องข้อความ (triangle) */
+.message-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.message.right .message-content::after {
+    right: -6px;
+    background-color: inherit;
+    transform: rotate(45deg);
+}
+
+.message.left .message-content::after {
+    left: -6px;
+    background-color: inherit;
+    transform: rotate(45deg);
+}
